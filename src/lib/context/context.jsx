@@ -1,4 +1,5 @@
-import React, { useContext, createContext } from "react";
+import React, { useContext, createContext } from 'react';
+import { ALL_MEALS_URL, RANDOM_MEAL_URL } from '../../config/config';
 
 const AppContext = createContext();
 

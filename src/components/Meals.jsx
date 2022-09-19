@@ -1,5 +1,5 @@
-import React from "react";
-import { useGlobalContext } from "../lib/context/context";
+import React from 'react';
+import { useGlobalContext } from '../lib/context/context';
 
 export default function Meals() {
   const context = useGlobalContext();
