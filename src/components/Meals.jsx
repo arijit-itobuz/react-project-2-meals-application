@@ -1,14 +1,15 @@
 import React from "react";
-import LikeButton from "../icons/LikeButton";
+import LikeButton from "../icons/LikeButton/LikeButton";
 import { useGlobalContext } from "../lib/context/context";
 
 export default function Meals() {
-  const { allMeals } = useGlobalContext();
-  console.log(allMeals);
+  const { allMeals, loading } = useGlobalContext();
   return (
     <>
       <section className={`section-center`}>
-        {allMeals &&
+        {loading && "loading"}
+        {!loading &&
+          allMeals &&
           allMeals.map((e) => {
             const { idMeal, strMeal, strMealThumb } = e;
             return (
