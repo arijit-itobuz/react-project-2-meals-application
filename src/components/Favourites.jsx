@@ -13,7 +13,7 @@ export default function Favourites() {
               return (
                 <div key={e.idMeal} className={`favourite-item`}>
                   <img
-                    onClick={() => chooseMeal(e.idMeal)}
+                    onClick={() => chooseMeal(e.idMeal, true)}
                     src={e.strMealThumb}
                     alt={`img-meal-${e.strMeal}`}
                     className={`favourites-img img`}

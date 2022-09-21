@@ -5,6 +5,7 @@ import { ALL_MEALS_URL, RANDOM_MEAL_URL } from '../../config/config';
 const AppContext = createContext();
 
 const AppProider = ({ children }) => {
+  const localFavourites = localStorage.getItem('favourites');
   // states
   const [allMeals, setallMeals] = useState([]);
   const [loading, setloading] = useState(false);
@@ -12,7 +13,11 @@ const AppProider = ({ children }) => {
   const [home, sethome] = useState(false);
   const [showModal, setshowModal] = useState(false);
   const [selectedMeal, setselectedMeal] = useState(null);
-  const [favourites, setfavourites] = useState([]);
+  const [favourites, setfavourites] = useState(
+    localFavourites !== null || localFavourites !== [] || localFavourites !== ''
+      ? JSON.parse(localStorage.getItem('favourites'))
+      : []
+  );
 
   // functions
   const getAllMeals = async () => {
@@ -38,10 +43,20 @@ const AppProider = ({ children }) => {
     setloading(false);
   };
 
-  const chooseMeal = (idMeal) => {
-    const meal = allMeals.find((e) => {
-      return e.idMeal === idMeal;
-    });
+  const chooseMeal = (idMeal, favouriteMealFlag) => {
+    // favouriteMealFlag is needed as when we add favourite and then we go to surprise me (random meal),
+    // the allMeals array has possibily of not having the meal that we want to see.
+    // So we use the favourite array when favouriteMealFlag is true.
+    let meal;
+    if (favouriteMealFlag) {
+      meal = favourites.find((e) => {
+        return e.idMeal === idMeal;
+      });
+    } else {
+      meal = allMeals.find((e) => {
+        return e.idMeal === idMeal;
+      });
+    }
     setselectedMeal(meal);
     setshowModal(true);
   };
@@ -62,6 +77,10 @@ const AppProider = ({ children }) => {
   useEffect(() => {
     getAllMeals();
   }, [searchTerm, home]);
+
+  useEffect(() => {
+    localStorage.setItem('favourites', JSON.stringify(favourites));
+  }, [favourites]);
 
   return (
     <AppContext.Provider
