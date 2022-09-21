@@ -4,7 +4,14 @@ import LikeButton from '../icons/LikeIcon/LikeIcon';
 import LoadingOverLay from '../icons/LoadingOverLay/LoadingOverLay';
 
 export default function Meals() {
-  const { allMeals, loading, searchTerm, chooseMeal, addFavourite } = useGlobalContext();
+  const {
+    allMeals,
+    loading,
+    searchTerm,
+    chooseMeal,
+    addFavourite,
+    favourites,
+  } = useGlobalContext();
   return (
     <>
       {searchTerm && (
@@ -32,8 +39,14 @@ export default function Meals() {
                   />
                   <footer>
                     <h5>{strMeal}</h5>
-                    <button onClick={() => addFavourite(idMeal)} type={`button`} className={`like-btn`}>
-                      <LikeButton className={`like-btn`} />
+                    <button
+                      onClick={() => addFavourite(idMeal)}
+                      type={`button`}
+                      className={(favourites.find((e) => {
+                        return e.idMeal === idMeal
+                      }) ? `like-btn like-btn-fav` : `like-btn`)}
+                    >
+                      <LikeButton />
                     </button>
                   </footer>
                 </article>

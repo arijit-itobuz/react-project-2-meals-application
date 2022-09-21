@@ -404,11 +404,11 @@ ul {
 }
 
 .like-btn {
-  color: red;
+  color: black;
 }
 
 .like-btn:hover {
-  color: red;
+  color: black;
 }
 
 .like-btn:active {
@@ -439,4 +439,12 @@ ul {
 .close-icon-container:hover {
   background: var(--primary-700);
   transition: var(--transition);
+}
+
+.like-btn-fav {
+  color: red;
+}
+
+.like-btn-fav:hover {
+  color: red;
 }
