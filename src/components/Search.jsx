@@ -38,7 +38,7 @@ export default function Search() {
             onChange={handleChange}
             value={text}
             type='search'
-            placeholder='start searching...'
+            placeholder='start fooding...'
             className={`form-input`}
           />
           <button type={`submit`} className={`btn`}>
