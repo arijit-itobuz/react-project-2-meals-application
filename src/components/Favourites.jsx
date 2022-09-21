@@ -12,7 +12,6 @@ export default function Favourites() {
             {favourites.map((e) => {
               return (
                 <div key={e.idMeal} className={`favourite-item`}>
-                  {/* <div>{e.strMeal}</div> */}
                   <img
                     onClick={() => chooseMeal(e.idMeal, true)}
                     src={e.strMealThumb}

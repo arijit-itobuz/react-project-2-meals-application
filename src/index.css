@@ -149,6 +149,12 @@ ul {
   display: inline-block;
 }
 
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);

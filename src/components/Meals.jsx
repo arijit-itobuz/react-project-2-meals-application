@@ -10,6 +10,7 @@ export default function Meals() {
     searchTerm,
     chooseMeal,
     addFavourite,
+    removeFavourite,
     favourites,
   } = useGlobalContext();
   return (
@@ -40,11 +41,24 @@ export default function Meals() {
                   <footer>
                     <h5>{strMeal}</h5>
                     <button
-                      onClick={() => addFavourite(idMeal)}
+                      onClick={() => {
+                        const checkFav = favourites.find((e) => {
+                          return e.idMeal === idMeal;
+                        });
+                        if (checkFav) {
+                          removeFavourite(idMeal);
+                        } else {
+                          addFavourite(idMeal);
+                        }
+                      }}
                       type={`button`}
-                      className={(favourites.find((e) => {
-                        return e.idMeal === idMeal
-                      }) ? `like-btn like-btn-fav` : `like-btn`)}
+                      className={
+                        favourites.find((e) => {
+                          return e.idMeal === idMeal;
+                        })
+                          ? `like-btn like-btn-fav`
+                          : `like-btn`
+                      }
                     >
                       <LikeButton />
                     </button>

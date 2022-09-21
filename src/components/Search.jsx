@@ -30,7 +30,7 @@ export default function Search() {
               }
             }}
             type='button'
-            className='btn'
+            className='btn home-container'
           >
             <HomeIcon />
           </button>
