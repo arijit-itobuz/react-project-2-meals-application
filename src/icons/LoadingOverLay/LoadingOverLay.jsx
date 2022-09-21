@@ -1,5 +1,4 @@
 import React from 'react';
-import './LoadingOverLay.scss';
 
 export default function LoadingOverLay() {
   return (

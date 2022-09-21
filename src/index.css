@@ -250,7 +250,7 @@ ul {
 /* Meals */
 .section,
 .section-center {
-  padding: 3rem 0;
+  padding: 1rem 0;
   width: var(--view-width);
   max-width: var(--max-width);
   margin: 0 auto;
@@ -371,4 +371,20 @@ ul {
 .close-btn {
   background: var(--red-dark);
   color: var(--white);
+}
+
+.search-tag {
+  background-color: #03449d;
+  font-size: 1.5rem;
+  padding: 0.1rem 1rem 0.2rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.search-tag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
 }
