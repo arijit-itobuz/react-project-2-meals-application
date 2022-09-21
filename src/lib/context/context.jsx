@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { ALL_MEALS_URL, RANDOM_MEAL_URL } from '../../config/config';
