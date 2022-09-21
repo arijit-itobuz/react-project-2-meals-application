@@ -32,7 +32,7 @@ export default function Search() {
             type='button'
             className='btn'
           >
-            <HomeIcon color={'white'} />
+            <HomeIcon />
           </button>
           <input
             onChange={handleChange}

@@ -58,9 +58,12 @@ html {
   --view-width: 90vw;
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 body {
@@ -218,7 +221,7 @@ ul {
 
 .favourites-container {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -244,7 +247,7 @@ ul {
 }
 
 .remove-btn:hover {
-  color: red
+  color: red;
 }
 
 /* Meals */
@@ -261,13 +264,13 @@ ul {
   gap: 2rem;
 }
 
-@media screen and (min-width:776px) {
+@media screen and (min-width: 776px) {
   .section-center {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
   .section-center {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -315,7 +318,7 @@ ul {
 
 .like-btn:hover {
   color: var(--red-dark);
-  transform: translateY(-2px)
+  transform: translateY(-2px);
 }
 
 /* Modal */
@@ -334,6 +337,7 @@ ul {
 }
 
 .modal-container {
+  position: relative;
   width: 80vw;
   max-width: 800px;
   height: 80vh;
@@ -358,14 +362,14 @@ ul {
 
 .modal-content a {
   display: block;
-  margin-right: 1rem;
+  margin-left: 1rem;
   color: var(--primary-500);
   text-decoration: underline;
   transition: var(--transition);
 }
 
 .modal-content a:hover {
-  color: var(--black)
+  color: var(--black);
 }
 
 .close-btn {
@@ -391,6 +395,44 @@ ul {
 
 .modal-footer {
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
+}
+
+.like-btn {
+  color: red;
+}
+
+.like-btn:hover {
+  color: red;
+}
+
+.like-btn:active {
+  color: orange;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.close-icon-container {
+  color: white;
+  position: absolute;
+  padding: 4px;
+  top: 0.5rem;
+  left: 0.5rem;
+  border:none;
+  background-color: var(--red-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.close-icon-container:hover {
+  background: var(--primary-700);
+  transition: var(--transition);
 }

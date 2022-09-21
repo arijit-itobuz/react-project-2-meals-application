@@ -1,4 +1,5 @@
 import React from 'react';
+import CloseIcon from '../icons/CloseIcon/CloseIcon';
 import { useGlobalContext } from '../lib/context/context';
 
 export default function Modal() {
@@ -8,6 +9,13 @@ export default function Modal() {
     <>
       <aside className='modal-overlay'>
         <div className='modal-container'>
+          <button
+            onClick={() => setshowModal(false)}
+            type='button'
+            className={`close-icon-container`}
+          >
+            <CloseIcon className={`close-icon`} />
+          </button>
           <img
             src={strMealThumb}
             alt={`img-meal-${strMeal}`}
@@ -18,9 +26,6 @@ export default function Modal() {
             <p>Cooking Instructions</p>
             <p>{strInstructions}</p>
             <div className='modal-footer'>
-              <a href={strSource} target='_blank' rel='noopener noreferrer'>
-                Source
-              </a>
               <button
                 onClick={() => setshowModal(false)}
                 type={`button`}
@@ -28,6 +33,9 @@ export default function Modal() {
               >
                 Close
               </button>
+              <a href={strSource} target='_blank' rel='noopener noreferrer'>
+                Source
+              </a>
             </div>
           </div>
         </div>

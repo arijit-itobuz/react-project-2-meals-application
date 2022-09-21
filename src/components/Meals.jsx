@@ -33,7 +33,7 @@ export default function Meals() {
                   <footer>
                     <h5>{strMeal}</h5>
                     <button onClick={() => addFavourite(idMeal)} type={`button`} className={`like-btn`}>
-                      <LikeButton className={`like-btn`} color={'red'} />
+                      <LikeButton className={`like-btn`} />
                     </button>
                   </footer>
                 </article>
